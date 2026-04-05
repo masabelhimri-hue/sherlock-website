@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | Sherlock Home Inspector</title>
+<meta name="description" content="Frequently asked questions about home inspections — what to expect, how long it takes, what's included, and more.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .faq-section { padding: 5rem 2rem; background: var(--cream); }
+  .faq-inner { max-width: 780px; margin: 0 auto; }
+  .faq-category { margin-bottom: 3rem; }
+  .faq-category-title {
+    font-family: 'Playfair Display', serif; font-size: 1.3rem;
+    font-weight: 700; color: var(--navy); margin-bottom: 1rem;
+    padding-bottom: 0.75rem; border-bottom: 2px solid var(--gold);
+    display: inline-block;
+  }
+  .faq-item { border-bottom: 1px solid var(--cream-dark); }
+  .faq-question {
+    width: 100%; text-align: left; background: none; border: none;
+    padding: 1.25rem 0; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 1rem;
+  }
+  .faq-question-text {
+    font-size: 15px; font-weight: 500; color: var(--navy); line-height: 1.4;
+  }
+  .faq-toggle {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--cream-dark); border: none;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 16px; color: var(--navy);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .faq-item.open .faq-toggle { background: var(--gold); color: var(--navy); transform: rotate(45deg); }
+  .faq-answer {
+    font-size: 14px; color: var(--text-mid); line-height: 1.75;
+    max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.2s;
+  }
+  .faq-item.open .faq-answer { max-height: 500px; padding-bottom: 1.25rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🔍</div>
+    <div class="nav-logo-text">Sherlock Home Inspector<span>Professional Inspections</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Schedule Inspection</a></li>
+  </ul>
+  <a href="contact.html" class="nav-mobile-cta" style="display:none;">Schedule</a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Got questions?</div>
+  <div class="section-title">Frequently asked questions</div>
+  <p>Everything you need to know about the inspection process — before, during, and after.</p>
+</div>
+
+<section class="faq-section">
+  <div class="faq-inner">
+
+    <div class="faq-category">
+      <div class="faq-category-title">Before the inspection</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">How do I schedule an inspection?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">You can schedule directly through our contact page or by calling us. Victoria, our client care coordinator, will walk you through availability, confirm the details, and get you booked — usually within the same week.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">How much does a home inspection cost?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Pricing starts around $350 for smaller homes and increases based on square footage. We provide an exact quote when you reach out — no surprises. See our Services page for a general pricing breakdown.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">How far in advance do I need to book?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">We typically have availability within the same week. In a competitive market, we recommend reaching out as soon as your offer is accepted so we can get on the calendar quickly.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">What areas do you serve?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">We proudly serve King, Pierce, Snohomish, Skagit, Thurston, Lewis, and Kitsap Counties. If you're unsure whether your location is covered, just reach out and we'll let you know.</div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-category-title">During the inspection</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">How long does a home inspection take?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Most inspections take between 2 and 4 hours depending on the size and age of the home. Larger or older homes may take longer. We never rush — thoroughness is the point.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">Should I be present during the inspection?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">We strongly encourage it. Being present allows you to see findings firsthand, ask questions in real time, and get a much deeper understanding of the home than any written report can provide on its own.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">What does the inspection cover?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">We inspect all major systems and components including the roof, attic, foundation, crawl space, structural framing, electrical system, plumbing, HVAC, windows, doors, and more. See our Services page for a full breakdown.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">What is NOT included in a standard inspection?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Standard inspections do not include specialized tests such as radon, mold, asbestos, sewer scopes, or pest/termite inspections. These are separate services. We're happy to recommend trusted specialists for any of these.</div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-category-title">After the inspection</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">When will I receive my report?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Your full, detailed report is delivered within 24 hours of the inspection — typically the same evening. It includes written findings, photos, and clear descriptions of any issues found.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">What format is the report in?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Reports are delivered digitally and are easy to read — written for homebuyers, not contractors. They include categorized findings, photos of every issue noted, and clear explanations of what each finding means and whether it needs immediate attention.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">Can I ask questions after I receive the report?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Absolutely. We're available after delivery to walk you through findings, answer questions, and help you understand what's most important. Your peace of mind doesn't end when the report lands in your inbox.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">If issues are found, does that mean I shouldn't buy the home?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Not necessarily. Every home has some findings — even new construction. Our job is to give you accurate information so you can make an informed decision. Many findings are minor maintenance items, while others may be useful leverage in negotiations. We'll help you understand the difference.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-label" style="color:var(--gold-light);">Still have questions?</div>
+  <div class="section-title">We're happy to help</div>
+  <p>Reach out and Victoria will get back to you quickly — no question is too small.</p>
+  <a href="contact.html" class="btn-primary" style="font-size:16px;padding:15px 36px;">Get in Touch →</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025 Sherlock Home Inspector · sherlockhomeinspector.com</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+</body>
+</html>

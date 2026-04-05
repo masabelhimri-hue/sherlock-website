@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Sherlock Home Inspector</title>
+<meta name="description" content="Comprehensive home inspection services in King, Pierce, Snohomish and surrounding counties. Roof, electrical, plumbing, HVAC, foundation, and more.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .services-full { padding: 5rem 2rem; background: var(--cream); }
+  .services-inner { max-width: 1100px; margin: 0 auto; }
+  .service-block {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3rem; align-items: center;
+    padding: 3.5rem 0; border-bottom: 1px solid var(--cream-dark);
+  }
+  .service-block:last-child { border-bottom: none; }
+  .service-block.reverse { direction: rtl; }
+  .service-block.reverse > * { direction: ltr; }
+  .service-block-visual {
+    background: var(--white); border: 1px solid var(--cream-dark);
+    border-radius: 12px; padding: 3rem;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; text-align: center; gap: 1rem;
+    min-height: 220px;
+  }
+  .service-big-icon { font-size: 56px; line-height: 1; }
+  .service-block-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .service-block-title {
+    font-family: 'Playfair Display', serif; font-size: 1.75rem;
+    font-weight: 700; color: var(--navy); margin-bottom: 0.75rem;
+  }
+  .service-block-desc { font-size: 15px; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.5rem; }
+  .service-checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .service-checklist li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text-mid); }
+  .check-gold {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(201,168,76,0.15); border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; color: var(--gold); font-size: 10px; font-weight: 700; margin-top: 2px;
+  }
+  .pricing-section { padding: 5rem 2rem; background: var(--navy); }
+  .pricing-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .pricing-section .section-title { color: var(--white); }
+  .pricing-section .section-sub { color: rgba(255,255,255,0.6); margin: 0 auto 3rem; }
+  .pricing-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; text-align: left; }
+  .pricing-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px; padding: 1.75rem;
+  }
+  .pricing-card.featured {
+    background: var(--gold); border-color: var(--gold);
+  }
+  .pricing-tier { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.5rem; }
+  .pricing-card.featured .pricing-tier { color: var(--navy); }
+  .pricing-price { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; }
+  .pricing-card.featured .pricing-price { color: var(--navy); }
+  .pricing-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 1.25rem; }
+  .pricing-card.featured .pricing-note { color: rgba(15,30,46,0.6); }
+  .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .pricing-features li { font-size: 13px; color: rgba(255,255,255,0.7); display: flex; gap: 8px; align-items: flex-start; }
+  .pricing-card.featured .pricing-features li { color: var(--navy); }
+  .pricing-features li::before { content: '✓'; color: var(--gold-light); font-weight: 700; flex-shrink: 0; }
+  .pricing-card.featured .pricing-features li::before { color: var(--navy); }
+  .pricing-note-bottom { margin-top: 2rem; font-size: 13px; color: rgba(255,255,255,0.45); }
+  @media (max-width: 768px) {
+    .service-block { grid-template-columns: 1fr; }
+    .service-block.reverse { direction: ltr; }
+    .pricing-cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🔍</div>
+    <div class="nav-logo-text">Sherlock Home Inspector<span>Professional Inspections</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Schedule Inspection</a></li>
+  </ul>
+  <a href="contact.html" class="nav-mobile-cta" style="display:none;">Schedule</a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">What we inspect</div>
+  <div class="section-title">Every system. Every detail.</div>
+  <p>A Sherlock inspection covers the full home — from the roof to the crawl space — so you have a complete picture before you commit.</p>
+</div>
+
+<div class="area-strip">
+  <p>Proudly serving <strong>King · Pierce · Snohomish · Skagit · Thurston · Lewis · Kitsap</strong> Counties</p>
+</div>
+
+<section class="services-full">
+  <div class="services-inner">
+
+    <div class="service-block">
+      <div class="service-block-visual"><span class="service-big-icon">🏗️</span><p style="font-size:14px;color:var(--text-light);">Structural &amp; Foundation</p></div>
+      <div>
+        <div class="service-block-label">Structural</div>
+        <div class="service-block-title">Foundation &amp; Structure</div>
+        <p class="service-block-desc">The bones of the home. We assess framing, foundation, and structural integrity — identifying settlement, cracks, moisture intrusion, and anything that could affect the long-term stability of the property.</p>
+        <ul class="service-checklist">
+          <li><span class="check-gold">✓</span> Foundation walls, footings, and settlement</li>
+          <li><span class="check-gold">✓</span> Crawl space condition and moisture</li>
+          <li><span class="check-gold">✓</span> Floor, wall, and roof framing</li>
+          <li><span class="check-gold">✓</span> Visible signs of water intrusion or damage</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-block reverse">
+      <div class="service-block-visual"><span class="service-big-icon">🏠</span><p style="font-size:14px;color:var(--text-light);">Roof &amp; Attic</p></div>
+      <div>
+        <div class="service-block-label">Exterior</div>
+        <div class="service-block-title">Roof &amp; Attic</div>
+        <p class="service-block-desc">In the Pacific Northwest, your roof works hard. We inspect shingles, flashing, gutters, and attic ventilation — giving you a clear picture of remaining life and any issues that need attention now or soon.</p>
+        <ul class="service-checklist">
+          <li><span class="check-gold">✓</span> Shingles, flashing, and ridge condition</li>
+          <li><span class="check-gold">✓</span> Gutters, downspouts, and drainage</li>
+          <li><span class="check-gold">✓</span> Attic insulation and ventilation</li>
+          <li><span class="check-gold">✓</span> Signs of water damage or leaks</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-block-visual"><span class="service-big-icon">⚡</span><p style="font-size:14px;color:var(--text-light);">Electrical Systems</p></div>
+      <div>
+        <div class="service-block-label">Electrical</div>
+        <div class="service-block-title">Electrical Systems</div>
+        <p class="service-block-desc">Electrical issues are among the most common — and potentially dangerous — findings in a home. We inspect the panel, wiring, outlets, and safety devices to identify hazards, outdated components, and code concerns.</p>
+        <ul class="service-checklist">
+          <li><span class="check-gold">✓</span> Main panel and circuit breakers</li>
+          <li><span class="check-gold">✓</span> Wiring type and condition</li>
+          <li><span class="check-gold">✓</span> GFCI and AFCI protection</li>
+          <li><span class="check-gold">✓</span> Outlets, switches, and fixtures</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-block reverse">
+      <div class="service-block-visual"><span class="service-big-icon">💧</span><p style="font-size:14px;color:var(--text-light);">Plumbing</p></div>
+      <div>
+        <div class="service-block-label">Plumbing</div>
+        <div class="service-block-title">Plumbing Systems</div>
+        <p class="service-block-desc">From the water main to the fixtures, we check for leaks, water pressure, drainage performance, and aging materials. We also inspect the water heater, including its age, condition, and safety features.</p>
+        <ul class="service-checklist">
+          <li><span class="check-gold">✓</span> Supply lines, shutoff valves, and pressure</li>
+          <li><span class="check-gold">✓</span> Drains, waste, and vent systems</li>
+          <li><span class="check-gold">✓</span> Water heater age, condition, and safety</li>
+          <li><span class="check-gold">✓</span> Fixtures, faucets, and visible supply lines</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-block-visual"><span class="service-big-icon">🌡️</span><p style="font-size:14px;color:var(--text-light);">HVAC Systems</p></div>
+      <div>
+        <div class="service-block-label">HVAC</div>
+        <div class="service-block-title">Heating, Cooling &amp; Ventilation</div>
+        <p class="service-block-desc">We test and evaluate your heating and cooling systems for function, safety, and remaining service life — helping you understand what's working, what needs maintenance, and what may need replacement soon.</p>
+        <ul class="service-checklist">
+          <li><span class="check-gold">✓</span> Furnace / heat pump operation and age</li>
+          <li><span class="check-gold">✓</span> Air conditioning (seasonal)</li>
+          <li><span class="check-gold">✓</span> Ductwork and air distribution</li>
+          <li><span class="check-gold">✓</span> Exhaust fans and ventilation</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="pricing-section">
+  <div class="pricing-inner">
+    <div class="section-label" style="color:var(--gold-light);">Transparent pricing</div>
+    <div class="section-title">Simple, straightforward pricing</div>
+    <p class="section-sub">No hidden fees. Pricing is based on the size of the home. Contact us for an exact quote.</p>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <div class="pricing-tier">Standard</div>
+        <div class="pricing-price">$350<span style="font-size:1rem;font-weight:400;">+</span></div>
+        <div class="pricing-note">Homes up to 2,000 sq ft</div>
+        <ul class="pricing-features">
+          <li>Full home inspection</li>
+          <li>Digital report within 24hrs</li>
+          <li>Photo documentation</li>
+          <li>Post-inspection Q&amp;A</li>
+        </ul>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-tier">Most Common</div>
+        <div class="pricing-price">$425<span style="font-size:1rem;font-weight:400;">+</span></div>
+        <div class="pricing-note">Homes 2,000–3,000 sq ft</div>
+        <ul class="pricing-features">
+          <li>Full home inspection</li>
+          <li>Digital report within 24hrs</li>
+          <li>Photo documentation</li>
+          <li>Post-inspection Q&amp;A</li>
+          <li>Priority scheduling</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Large Home</div>
+        <div class="pricing-price">$500<span style="font-size:1rem;font-weight:400;">+</span></div>
+        <div class="pricing-note">Homes over 3,000 sq ft</div>
+        <ul class="pricing-features">
+          <li>Full home inspection</li>
+          <li>Digital report within 24hrs</li>
+          <li>Photo documentation</li>
+          <li>Post-inspection Q&amp;A</li>
+          <li>Priority scheduling</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pricing-note-bottom">Prices are estimates. Contact us for an exact quote based on your home's size, age, and location.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-label" style="color:var(--gold-light);">Get started</div>
+  <div class="section-title">Schedule your inspection today</div>
+  <p>Same-week availability in most areas. We'll get you booked fast.</p>
+  <a href="contact.html" class="btn-primary" style="font-size:16px;padding:15px 36px;">Schedule an Inspection →</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025 Sherlock Home Inspector · sherlockhomeinspector.com</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

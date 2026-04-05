@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Sherlock Home Inspector</title>
+<meta name="description" content="Meet the Sherlock Home Inspector team — Musab Elhimri, Victoria Tkach, and Donnie. Serving King, Pierce, Snohomish and surrounding counties.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .team-section { padding: 5rem 2rem; background: var(--cream); }
+  .team-inner { max-width: 1100px; margin: 0 auto; }
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .team-card { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
+  .team-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+  .team-card-top { background: var(--navy); padding: 2.5rem 1.5rem 1.5rem; text-align: center; }
+  .team-avatar {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: rgba(201,168,76,0.2); border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700;
+    color: var(--gold); margin: 0 auto 1rem;
+  }
+  .team-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .team-role { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-light); }
+  .team-body { padding: 1.5rem; }
+  .team-bio { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+  .values-section { padding: 5rem 2rem; background: var(--navy); }
+  .values-inner { max-width: 1100px; margin: 0 auto; }
+  .values-section .section-title { color: var(--white); }
+  .values-section .section-sub { color: rgba(255,255,255,0.6); }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 3rem; }
+  .value-card { border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 1.75rem; }
+  .value-icon { font-size: 24px; margin-bottom: 1rem; display: block; }
+  .value-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+  .value-text { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; }
+  .mission-section { padding: 5rem 2rem; background: var(--cream); }
+  .mission-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+  .mission-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.5;
+    font-style: italic;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-left: 3px solid var(--gold);
+    text-align: left;
+    background: var(--white);
+    border-radius: 0 8px 8px 0;
+  }
+  @media (max-width: 768px) {
+    .team-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🔍</div>
+    <div class="nav-logo-text">Sherlock Home Inspector<span>Professional Inspections</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Schedule Inspection</a></li>
+  </ul>
+  <a href="contact.html" class="nav-mobile-cta" style="display:none;">Schedule</a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Our team</div>
+  <div class="section-title">The people behind every inspection</div>
+  <p>A small, dedicated team committed to protecting your investment and giving you the clarity you need to buy with confidence.</p>
+</div>
+
+<div class="area-strip">
+  <p>Proudly serving <strong>King · Pierce · Snohomish · Skagit · Thurston · Lewis · Kitsap</strong> Counties</p>
+</div>
+
+<section class="team-section">
+  <div class="team-inner">
+    <div class="section-label">Meet the team</div>
+    <div class="section-title">Experienced, honest, and here for you</div>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-card-top">
+          <div class="team-avatar">M</div>
+          <div class="team-name">Musab Elhimri</div>
+          <div class="team-role">Founder &amp; Owner</div>
+        </div>
+        <div class="team-body">
+          <p class="team-bio">Musab founded Sherlock Home Inspector with a simple mission: deliver clear, detailed, and trustworthy inspections that empower clients to make confident decisions. Known for his precision, professionalism, and commitment to integrity, Musab approaches every inspection with the same level of care and attention he would expect for his own home.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-top">
+          <div class="team-avatar">V</div>
+          <div class="team-name">Victoria Tkach</div>
+          <div class="team-role">Client Care Coordinator</div>
+        </div>
+        <div class="team-body">
+          <p class="team-bio">Victoria is the heart of our operations. With a commitment to professionalism and exceptional customer service, she ensures every client experience is smooth, organized, and stress-free. Friendly and always available, Victoria is your first call for questions, quotes, and scheduling — and she makes it easy every time.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-top">
+          <div class="team-avatar">D</div>
+          <div class="team-name">Donnie</div>
+          <div class="team-role">Lead Inspector</div>
+        </div>
+        <div class="team-body">
+          <p class="team-bio">Donnie is the driving force behind our inspection team — energetic, thorough, and passionate about what he does. Whether he's climbing through attics or navigating tight crawl spaces, he brings the same dedication to every job. Clients appreciate his friendly attitude, clear communication, and commitment to making each inspection informative and stress-free.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="mission-section">
+  <div class="mission-inner">
+    <div class="section-label">Our mission</div>
+    <div class="section-title">Protecting your investment</div>
+    <blockquote class="mission-quote">
+      "Buying a home is one of the biggest investments of your life. At Sherlock Home Inspector, we're here to make sure what you see is truly what you get."
+    </blockquote>
+    <p style="color:var(--text-mid);font-size:15px;">We thoroughly examine every major system of the home — roof, attic, crawl space, foundation, structure, plumbing, electrical, and HVAC. But our job doesn't end with the inspection. We take time to explain our findings, answer your questions, and help you make informed decisions with confidence.</p>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="values-inner">
+    <div class="section-label">What we stand for</div>
+    <div class="section-title" style="color:var(--white);">Our values</div>
+    <p class="section-sub">Every decision we make comes back to these principles.</p>
+    <div class="values-grid">
+      <div class="value-card"><span class="value-icon">🔍</span><div class="value-title">Precision</div><p class="value-text">We use advanced tools and proven processes to catch what others miss — and document it clearly.</p></div>
+      <div class="value-card"><span class="value-icon">🤝</span><div class="value-title">Honesty</div><p class="value-text">We tell you the truth about the home, even when it's not what you want to hear. That's how we protect you.</p></div>
+      <div class="value-card"><span class="value-icon">💡</span><div class="value-title">Clarity</div><p class="value-text">Reports written in plain language. Findings explained in person. We believe knowledge empowers better decisions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-label" style="color:var(--gold-light);">Work with us</div>
+  <div class="section-title">Ready to schedule your inspection?</div>
+  <p>We're available same week in most areas. Reach out and we'll take it from there.</p>
+  <a href="contact.html" class="btn-primary" style="font-size:16px;padding:15px 36px;">Schedule an Inspection →</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025 Sherlock Home Inspector · sherlockhomeinspector.com</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
