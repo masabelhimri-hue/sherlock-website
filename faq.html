@@ -39,6 +39,27 @@
     max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.2s;
   }
   .faq-item.open .faq-answer { max-height: 500px; padding-bottom: 1.25rem; }
+  
+  .county-accordion { margin-top: 1rem; }
+.county-item { border-bottom: 1px solid var(--cream-dark); }
+.county-btn {
+  width: 100%; text-align: left; background: none; border: none;
+  padding: 0.75rem 0; cursor: pointer; font-size: 14px;
+  font-weight: 500; color: var(--navy);
+  display: flex; justify-content: space-between;
+}
+.county-cities {
+  display: none;
+  flex-wrap: wrap; gap: 8px;
+  padding-bottom: 0.75rem;
+}
+.county-item.open .county-cities { display: flex; }
+.county-cities a {
+  font-size: 13px; color: var(--text-mid);
+  text-decoration: none; background: var(--cream-dark);
+  padding: 4px 10px; border-radius: 100px;
+}
+.county-cities a:hover { color: var(--navy); }
 </style>
 </head>
 <body>
