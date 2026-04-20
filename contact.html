@@ -73,8 +73,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">🔍</div>
-    <div class="nav-logo-text">Sherlock Home Inspector<span>Professional Inspections</span></div>
+    <img src="logo.png" alt="Sherlock Home Inspector" class="nav-logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -84,8 +83,18 @@
     <li><a href="contact.html" class="active">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Open a Case</a></li>
   </ul>
-  <a href="contact.html" class="nav-mobile-cta" style="display:none;">Open Case</a>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html" class="active">Contact</a>
+  <a href="contact.html" class="mobile-menu-cta">Open a Case</a>
+</div>
 
 <div class="page-hero">
   <div class="section-label">Get in touch</div>
@@ -110,7 +119,7 @@
           <div class="contact-card-icon">📞</div>
           <div>
             <div class="contact-card-label">Phone</div>
-            <div class="contact-card-value"><a href="tel:+1XXXXXXXXXX" style="color:var(--navy);text-decoration:none;">(XXX) XXX-XXXX</a></div>
+            <div class="contact-card-value"><a href="tel:+12532345065" style="color:var(--navy);text-decoration:none;">(253) 234-5065</a></div>
             <div class="contact-card-sub">Mon–Fri 8am–6pm, Sat 9am–2pm</div>
           </div>
         </div>
@@ -204,6 +213,7 @@
   </div>
 </footer>
 
+<script src="script.js"></script>
 <script>
   function handleSubmit(e) {
     e.preventDefault();

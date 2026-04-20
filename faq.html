@@ -45,8 +45,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">🔍</div>
-    <div class="nav-logo-text">Sherlock Home Inspector<span>Professional Inspections</span></div>
+    <img src="logo.png" alt="Sherlock Home Inspector" class="nav-logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -56,8 +55,18 @@
     <li><a href="contact.html">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Open a Case</a></li>
   </ul>
-  <a href="contact.html" class="nav-mobile-cta" style="display:none;">Open Case</a>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="faq.html" class="active">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mobile-menu-cta">Open a Case</a>
+</div>
 
 <div class="page-hero">
   <div class="section-label">Got questions?</div>
@@ -100,7 +109,61 @@
           <span class="faq-question-text">What areas do you serve?</span>
           <span class="faq-toggle">+</span>
         </button>
-        <div class="faq-answer">We proudly serve King, Pierce, Snohomish, Skagit, Thurston, Lewis, and Kitsap Counties. If you're unsure whether your location is covered, just reach out and we'll let you know.</div>
+        <div class="faq-answer">
+          <p style="margin-bottom:1rem;">We proudly serve seven counties across the greater Puget Sound. Click any county below to see the cities we cover:</p>
+          <div class="county-accordion">
+
+            <div class="county-item">
+              <button class="county-btn" onclick="toggleCounty(this)">King County <span class="county-icon">+</span></button>
+              <div class="county-cities">
+                <a href="seattle.html">Seattle</a><a href="bellevue.html">Bellevue</a><a href="kirkland.html">Kirkland</a><a href="redmond.html">Redmond</a><a href="renton.html">Renton</a><a href="kent.html">Kent</a><a href="auburn.html">Auburn</a><a href="federal-way.html">Federal Way</a><a href="tukwila.html">Tukwila</a><a href="issaquah.html">Issaquah</a><a href="sammamish.html">Sammamish</a><a href="burien.html">Burien</a><a href="shoreline.html">Shoreline</a><a href="seatac.html">SeaTac</a><a href="maple-valley.html">Maple Valley</a><a href="kenmore.html">Kenmore</a><a href="bothell.html">Bothell</a><a href="woodinville.html">Woodinville</a>
+              </div>
+            </div>
+
+            <div class="county-item">
+              <button class="county-btn" onclick="toggleCounty(this)">Pierce County <span class="county-icon">+</span></button>
+              <div class="county-cities">
+                <a href="tacoma.html">Tacoma</a><a href="puyallup.html">Puyallup</a><a href="lakewood.html">Lakewood</a><a href="gig-harbor.html">Gig Harbor</a><a href="bonney-lake.html">Bonney Lake</a><a href="university-place.html">University Place</a><a href="sumner.html">Sumner</a>
+              </div>
+            </div>
+
+            <div class="county-item">
+              <button class="county-btn" onclick="toggleCounty(this)">Snohomish County <span class="county-icon">+</span></button>
+              <div class="county-cities">
+                <a href="everett.html">Everett</a><a href="marysville.html">Marysville</a><a href="lynnwood.html">Lynnwood</a><a href="mukilteo.html">Mukilteo</a><a href="edmonds.html">Edmonds</a><a href="mill-creek.html">Mill Creek</a><a href="snohomish.html">Snohomish</a><a href="monroe.html">Monroe</a>
+              </div>
+            </div>
+
+            <div class="county-item">
+              <button class="county-btn" onclick="toggleCounty(this)">Thurston County <span class="county-icon">+</span></button>
+              <div class="county-cities">
+                <a href="olympia.html">Olympia</a><a href="lacey.html">Lacey</a><a href="tumwater.html">Tumwater</a><a href="yelm.html">Yelm</a>
+              </div>
+            </div>
+
+            <div class="county-item">
+              <button class="county-btn" onclick="toggleCounty(this)">Kitsap County <span class="county-icon">+</span></button>
+              <div class="county-cities">
+                <a href="bremerton.html">Bremerton</a><a href="silverdale.html">Silverdale</a><a href="poulsbo.html">Poulsbo</a><a href="port-orchard.html">Port Orchard</a><a href="bainbridge-island.html">Bainbridge Island</a>
+              </div>
+            </div>
+
+            <div class="county-item">
+              <button class="county-btn" onclick="toggleCounty(this)">Skagit County <span class="county-icon">+</span></button>
+              <div class="county-cities">
+                <a href="mount-vernon.html">Mount Vernon</a><a href="burlington.html">Burlington</a><a href="anacortes.html">Anacortes</a><a href="sedro-woolley.html">Sedro-Woolley</a>
+              </div>
+            </div>
+
+            <div class="county-item">
+              <button class="county-btn" onclick="toggleCounty(this)">Lewis County <span class="county-icon">+</span></button>
+              <div class="county-cities">
+                <a href="chehalis.html">Chehalis</a><a href="centralia.html">Centralia</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
 
@@ -199,14 +262,7 @@
   </div>
 </footer>
 
-<script>
-  function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  }
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
