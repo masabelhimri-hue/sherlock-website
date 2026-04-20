@@ -35,7 +35,9 @@ nav {
   top: 0;
   z-index: 100;
 }
-
+.nav-links {
+  justify-self: center;
+}
 .nav-logo {
   display: flex;
   align-items: center;
