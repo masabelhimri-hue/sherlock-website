@@ -270,3 +270,6 @@ footer {
     text-decoration: none;
   }
 }
+.nav-mobile-menu {
+  display: none;
+}
