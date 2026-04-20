@@ -45,6 +45,8 @@ nav {
 .nav-logo-img {
   height: 40px;
   width: auto;
+  display: block;
+}
 }
 .nav-logo-icon {
   width: 36px;
