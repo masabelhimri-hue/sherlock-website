@@ -42,7 +42,10 @@ nav {
   gap: 10px;
   text-decoration: none;
 }
-
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+}
 .nav-logo-icon {
   width: 36px;
   height: 36px;
