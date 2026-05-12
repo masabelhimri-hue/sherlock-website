@@ -1,27 +1,91 @@
-﻿<!DOCTYPE html>
+$outputDir = 'c:\Users\masab\OneDrive\Real Estate Transactions\Listing Photos'
+
+$cities = @(
+  @{slug='seattle';city='Seattle';county='King County'},
+  @{slug='bellevue';city='Bellevue';county='King County'},
+  @{slug='kirkland';city='Kirkland';county='King County'},
+  @{slug='redmond';city='Redmond';county='King County'},
+  @{slug='renton';city='Renton';county='King County'},
+  @{slug='kent';city='Kent';county='King County'},
+  @{slug='auburn';city='Auburn';county='King County'},
+  @{slug='federal-way';city='Federal Way';county='King County'},
+  @{slug='tukwila';city='Tukwila';county='King County'},
+  @{slug='issaquah';city='Issaquah';county='King County'},
+  @{slug='sammamish';city='Sammamish';county='King County'},
+  @{slug='burien';city='Burien';county='King County'},
+  @{slug='shoreline';city='Shoreline';county='King County'},
+  @{slug='seatac';city='SeaTac';county='King County'},
+  @{slug='maple-valley';city='Maple Valley';county='King County'},
+  @{slug='kenmore';city='Kenmore';county='King County'},
+  @{slug='bothell';city='Bothell';county='King County'},
+  @{slug='woodinville';city='Woodinville';county='King County'},
+  @{slug='tacoma';city='Tacoma';county='Pierce County'},
+  @{slug='puyallup';city='Puyallup';county='Pierce County'},
+  @{slug='lakewood';city='Lakewood';county='Pierce County'},
+  @{slug='gig-harbor';city='Gig Harbor';county='Pierce County'},
+  @{slug='bonney-lake';city='Bonney Lake';county='Pierce County'},
+  @{slug='university-place';city='University Place';county='Pierce County'},
+  @{slug='sumner';city='Sumner';county='Pierce County'},
+  @{slug='everett';city='Everett';county='Snohomish County'},
+  @{slug='marysville';city='Marysville';county='Snohomish County'},
+  @{slug='lynnwood';city='Lynnwood';county='Snohomish County'},
+  @{slug='mukilteo';city='Mukilteo';county='Snohomish County'},
+  @{slug='edmonds';city='Edmonds';county='Snohomish County'},
+  @{slug='mill-creek';city='Mill Creek';county='Snohomish County'},
+  @{slug='snohomish';city='Snohomish';county='Snohomish County'},
+  @{slug='monroe';city='Monroe';county='Snohomish County'},
+  @{slug='olympia';city='Olympia';county='Thurston County'},
+  @{slug='lacey';city='Lacey';county='Thurston County'},
+  @{slug='tumwater';city='Tumwater';county='Thurston County'},
+  @{slug='yelm';city='Yelm';county='Thurston County'},
+  @{slug='bremerton';city='Bremerton';county='Kitsap County'},
+  @{slug='silverdale';city='Silverdale';county='Kitsap County'},
+  @{slug='poulsbo';city='Poulsbo';county='Kitsap County'},
+  @{slug='port-orchard';city='Port Orchard';county='Kitsap County'},
+  @{slug='bainbridge-island';city='Bainbridge Island';county='Kitsap County'},
+  @{slug='mount-vernon';city='Mount Vernon';county='Skagit County'},
+  @{slug='burlington';city='Burlington';county='Skagit County'},
+  @{slug='anacortes';city='Anacortes';county='Skagit County'},
+  @{slug='sedro-woolley';city='Sedro-Woolley';county='Skagit County'},
+  @{slug='chehalis';city='Chehalis';county='Lewis County'},
+  @{slug='centralia';city='Centralia';county='Lewis County'}
+)
+
+$googleMapsUrl = 'https://www.google.com/maps/place/Sherlock+Home+Inspector+LLC/data=!4m2!3m1!1s0x0:0xd9a62551a5cbea01'
+$googleSvg = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-label="Google review"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>'
+$googleSvgLg = '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>'
+$googleSvgMd = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>'
+
+foreach ($c in $cities) {
+  $slug = $c.slug
+  $city = $c.city
+  $county = $c.county
+
+$html = @"
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home Inspector in Sammamish, WA | Sherlock Home Inspector</title>
-<meta name="description" content="Thorough, honest home inspections in Sammamish, WA. Sherlock Home Inspector serves Sammamish and all of King County. Same-week availability, report in 24 hours.">
-<link rel="canonical" href="https://www.sherlockhomeinspector.com/sammamish">
+<title>Home Inspector in $city, WA | Sherlock Home Inspector</title>
+<meta name="description" content="Thorough, honest home inspections in $city, WA. Sherlock Home Inspector serves $city and all of $county. Same-week availability, report in 24 hours.">
+<link rel="canonical" href="https://www.sherlockhomeinspector.com/$slug">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Sherlock Home Inspector",
-  "description": "Professional home inspection services in Sammamish, WA and throughout King County.",
-  "url": "https://www.sherlockhomeinspector.com/sammamish",
+  "description": "Professional home inspection services in $city, WA and throughout $county.",
+  "url": "https://www.sherlockhomeinspector.com/$slug",
   "telephone": "+12532345065",
   "email": "info@sherlockhomeinspector.com",
   "areaServed": {
     "@type": "City",
-    "name": "Sammamish",
+    "name": "$city",
     "containedInPlace": {
       "@type": "AdministrativeArea",
-      "name": "King County, Washington"
+      "name": "$county, Washington"
     }
   },
   "openingHours": ["Mo-Fr 08:00-18:00", "Sa 09:00-14:00"],
@@ -234,9 +298,9 @@
   <div class="hero-pattern"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-badge">Serving Sammamish, WA</div>
-      <h1>Home Inspector<br>in <em>Sammamish.</em></h1>
-      <p class="hero-sub">Thorough, honest home inspections in Sammamish and throughout King County. We examine every major system so you can make confident decisions.</p>
+      <div class="hero-badge">Serving $city, WA</div>
+      <h1>Home Inspector<br>in <em>$city.</em></h1>
+      <p class="hero-sub">Thorough, honest home inspections in $city and throughout $county. We examine every major system so you can make confident decisions.</p>
       <div class="hero-actions">
         <a href="contact.html" class="btn-primary">Open a Case</a>
         <a href="services.html" class="btn-ghost">Learn what we inspect &rarr;</a>
@@ -273,7 +337,7 @@
     <div class="stat"><div class="stat-num">1,500<span>+</span></div><div class="stat-label">Inspections Completed</div></div>
     <div class="stat"><div class="stat-num">7</div><div class="stat-label">Counties Served</div></div>
     <div class="stat"><div class="stat-num">24<span>hr</span></div><div class="stat-label">Report Turnaround</div></div>
-    <div class="stat"><a href="https://www.google.com/maps/place/Sherlock+Home+Inspector+LLC/data=!4m2!3m1!1s0x0:0xd9a62551a5cbea01" target="_blank" rel="noopener" style="text-decoration:none;display:block;"><div class="stat-num">5<span>&#9733;</span></div><div class="stat-label">Google Rating</div></a></div>
+    <div class="stat"><a href="$googleMapsUrl" target="_blank" rel="noopener" style="text-decoration:none;display:block;"><div class="stat-num">5<span>&#9733;</span></div><div class="stat-label">Google Rating</div></a></div>
   </div>
 </section>
 
@@ -349,8 +413,8 @@
     <div class="section-label">What clients say</div>
     <div class="section-title" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
       <span>5 Stars on Google</span>
-      <a href="https://www.google.com/maps/place/Sherlock+Home+Inspector+LLC/data=!4m2!3m1!1s0x0:0xd9a62551a5cbea01" target="_blank" rel="noopener" class="google-all-reviews-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+      <a href="$googleMapsUrl" target="_blank" rel="noopener" class="google-all-reviews-link">
+        $googleSvgMd
         See all reviews
       </a>
     </div>
@@ -358,7 +422,7 @@
       <div class="testimonial-card">
         <div class="testimonial-card-top">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <div class="google-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-label="Google review"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google Review</div>
+          <div class="google-source">$googleSvg Google Review</div>
         </div>
         <p class="testimonial-text">"Used them for the inspection of my home in northeast Tacoma, very thorough, great at explaining things and overall a great experience. Highly recommend them for anyone who wants a honest, swift, and educational experience!!!"</p>
         <div class="testimonial-author"><div class="author-avatar">DE</div><div><div class="author-name">Danny E.</div><div class="author-loc">Tacoma, WA</div></div></div>
@@ -366,7 +430,7 @@
       <div class="testimonial-card">
         <div class="testimonial-card-top">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <div class="google-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-label="Google review"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google Review</div>
+          <div class="google-source">$googleSvg Google Review</div>
         </div>
         <p class="testimonial-text">"We recently used Sherlock home inspector and couldn't be happier. Masab was professional, friendly, thorough, and took the time to explain everything in clear, simple terms. The report was detailed, easy to understand, and delivered promptly. Highly recommend to anyone looking for a reliable and trustworthy inspection service!"</p>
         <div class="testimonial-author"><div class="author-avatar">MP</div><div><div class="author-name">Mparallel</div><div class="author-loc">Pierce County, WA</div></div></div>
@@ -374,7 +438,7 @@
       <div class="testimonial-card">
         <div class="testimonial-card-top">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <div class="google-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-label="Google review"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google Review</div>
+          <div class="google-source">$googleSvg Google Review</div>
         </div>
         <p class="testimonial-text">"I had a roof leak at my house &mdash; he came out with his meter and was able to pinpoint where the leak was and gave me advice on how to proceed with my roof. 100 percent recommend him. He is very knowledgeable and super helpful. Thank you!!"</p>
         <div class="testimonial-author"><div class="author-avatar">W</div><div><div class="author-name">Wendy</div><div class="author-loc">Renton, WA</div></div></div>
@@ -386,7 +450,7 @@
 <div class="google-reviews-banner">
   <div class="google-reviews-banner-inner">
     <div class="google-reviews-left">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+      $googleSvgLg
       <div>
         <div class="google-reviews-rating">
           <span class="google-reviews-score">5.0</span>
@@ -397,7 +461,7 @@
     </div>
     <div class="google-reviews-divider"></div>
     <p class="google-reviews-quote">"Thorough, professional, and communicative from start to finish. Best inspection company in the area."</p>
-    <a href="https://www.google.com/maps/place/Sherlock+Home+Inspector+LLC/data=!4m2!3m1!1s0x0:0xd9a62551a5cbea01" target="_blank" rel="noopener" class="google-reviews-cta">
+    <a href="$googleMapsUrl" target="_blank" rel="noopener" class="google-reviews-cta">
       Read our Google reviews &rarr;
     </a>
   </div>
@@ -405,7 +469,7 @@
 
 <section class="cta-section">
   <div class="section-label" style="color:var(--gold-light);">Ready to investigate?</div>
-  <div class="section-title" style="color:var(--white);">Book your Sammamish inspection today</div>
+  <div class="section-title" style="color:var(--white);">Book your $city inspection today</div>
   <p>Fast scheduling, same-week availability, and a report you'll actually understand.</p>
   <a href="contact.html" class="btn-primary" style="font-size:16px;padding:15px 36px;">Open a Case &rarr;</a>
 </section>
@@ -426,3 +490,11 @@
 <script src="script.js"></script>
 </body>
 </html>
+"@
+
+  $filepath = Join-Path $outputDir ($slug + '.html')
+  [System.IO.File]::WriteAllText($filepath, $html, [System.Text.Encoding]::UTF8)
+  Write-Host "Created: $slug.html"
+}
+
+Write-Host "Done! Generated $($cities.Count) city pages."

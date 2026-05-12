@@ -4,12 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us | Sherlock Home Inspector</title>
-<meta name="description" content="Meet the Sherlock Home Inspector team — Musab Elhimri, Victoria Tkach, and Donnie. Serving King, Pierce, Snohomish and surrounding counties.">
+<meta name="description" content="Meet the Sherlock Home Inspector team — Musab Elhimri, Victoria Tkach, Donnie, Zayden, and Waleed. Serving King, Pierce, Snohomish and surrounding counties.">
 <link rel="stylesheet" href="style.css">
 <style>
   .team-section { padding: 5rem 2rem; background: var(--cream); }
   .team-inner { max-width: 1100px; margin: 0 auto; }
   .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  @media (min-width: 769px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+  .team-grid .team-card:nth-child(4),
+  .team-grid .team-card:nth-child(5) { margin-top: 0; }
   .team-card { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
   .team-card:hover { transform: translateY(-4px); border-color: var(--gold); }
   .team-card-top { background: var(--navy); padding: 2.5rem 1.5rem 1.5rem; text-align: center; }
@@ -124,10 +127,32 @@
         <div class="team-card-top">
           <div class="team-avatar">D</div>
           <div class="team-name">Donnie</div>
-          <div class="team-role">Lead Inspector</div>
+          <div class="team-role">Inspector</div>
         </div>
         <div class="team-body">
-          <p class="team-bio">Donnie is the driving force behind our inspection team — energetic, thorough, and passionate about what he does. Whether he's climbing through attics or navigating tight crawl spaces, he brings the same dedication to every job. Clients appreciate his friendly attitude, clear communication, and commitment to making each inspection informative and stress-free.</p>
+          <p class="team-bio">Donnie brings years of hands-on experience to every inspection. Methodical and dependable, he evaluates each home with care and communicates his findings clearly. Clients appreciate his calm, no-nonsense approach and the confidence that comes with working alongside someone who has seen it all.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-top">
+          <div class="team-avatar">Z</div>
+          <div class="team-name">Zayden</div>
+          <div class="team-role">Inspector</div>
+        </div>
+        <div class="team-body">
+          <p class="team-bio">Zayden is the inspector most of our clients will meet on inspection day — and for good reason. Sharp, thorough, and genuinely invested in every job, he has quickly become the backbone of our field operations. Whether he's working through a new construction or a decades-old home, Zayden brings the same high standard to every inspection and makes sure clients leave with a clear understanding of what they found.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-top">
+          <div class="team-avatar">W</div>
+          <div class="team-name">Waleed</div>
+          <div class="team-role">Inspector &amp; Well Inspector</div>
+        </div>
+        <div class="team-body">
+          <p class="team-bio">Waleed specializes in both general home inspections and private well systems. His expertise in well inspection makes him the go-to for properties on well water — evaluating flow, pressure, and overall system condition with the same thoroughness he brings to every inspection.</p>
         </div>
       </div>
 
